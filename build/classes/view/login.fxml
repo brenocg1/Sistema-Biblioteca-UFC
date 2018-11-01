@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="loginBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #e0f6f9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.loginController">
+   <children>
+      <AnchorPane prefHeight="540.0" prefWidth="451.0" style="-fx-background-color: #0827CC;">
+         <children>
+            <ImageView fitHeight="33.0" fitWidth="79.0" layoutX="175.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ufc-logo-universidade-14-200px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="91.0" layoutY="265.0" prefHeight="89.0" prefWidth="270.0" text="Biblioteca Sistema" textFill="WHITE">
+               <font>
+                  <Font name="Lato Regular" size="31.0" />
+               </font>
+            </Label>
+            <ImageView blendMode="ADD" fitHeight="122.0" fitWidth="242.0" layoutX="120.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/library-big-200px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="135.0" layoutY="333.0" prefHeight="43.0" prefWidth="183.0" text="Logue no Banco De Dados" textFill="WHITE">
+               <font>
+                  <Font name="Lato Regular" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="usernameTF" layoutX="535.0" layoutY="168.0" prefHeight="26.0" prefWidth="249.0" />
+      <Label layoutX="535.0" layoutY="108.0" prefHeight="43.0" prefWidth="79.0" text="Username" />
+      <JFXPasswordField fx:id="passwordTF" layoutX="534.0" layoutY="270.0" prefHeight="26.0" prefWidth="249.0" />
+      <Label layoutX="535.0" layoutY="213.0" prefHeight="43.0" prefWidth="79.0" text="Password" />
+      <JFXButton fx:id="login" layoutX="535.0" layoutY="344.0" onAction="#loginBtn" prefHeight="33.0" prefWidth="67.0" style="-fx-background-color: #1384d6;" text="Login" />
+      <JFXCheckBox fx:id="cbConect" checkedColor="#04ff04" layoutX="535.0" layoutY="410.0" text="Conexao ao Banco" unCheckedColor="RED" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeBibliController">
+   <children>
+      <AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;">
+         <children>
+            <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" style="-fx-background-color: #193bc4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="224.0" layoutY="47.0" text="Bibliotecario" textFill="WHITE">
+                     <font>
+                        <Font name="Lato Light" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="227.0" layoutY="100.0" text="Sistema Biblioteca UFC" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="sair" layoutX="1041.0" layoutY="95.0" nodeOrientation="RIGHT_TO_LEFT" onAction="#close" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #44b6d6;" text="SAIR" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="252.0" text="Consultar" textFill="#171717">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="60.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXButton fx:id="consultarLivros" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Livros" textFill="#5b5858">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="consultarUsuarios" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="consultarReservas" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reservas" textFill="#5b5858">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </JFXButton>
+                  <Label prefHeight="30.0" prefWidth="252.0" text="Emprestimos" textFill="#171717">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Label>
+                  <JFXButton fx:id="empresRealizar" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Realizar" textFill="#5b5858">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="empresAlterar" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Alterar" textFill="#5b5858">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="empresBaixa" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Dar Baixa" textFill="#5b5858">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="122.0" fitWidth="125.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/login_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ScrollPane layoutX="251.0" layoutY="182.0" prefHeight="406.0" prefWidth="810.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="182.0">
+               <content>
+                  <VBox fx:id="pnl_scroll" prefHeight="404.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;" />
+               </content>
+            </ScrollPane>
+            <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

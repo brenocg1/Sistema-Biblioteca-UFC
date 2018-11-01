@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeAdminController">
+   <children>
+      <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #e0f6f9;">
+         <children>
+            <AnchorPane prefHeight="540.0" prefWidth="451.0" style="-fx-background-color: #0827CC;">
+               <children>
+                  <ImageView fitHeight="115.0" fitWidth="191.0" layoutX="116.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ufc-logo-universidade-14-200px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="77.0" layoutY="264.0" prefHeight="89.0" prefWidth="270.0" text="Biblioteca Sistema" textFill="WHITE">
+                     <font>
+                        <Font name="Lato Regular" size="31.0" />
+                     </font>
+                  </Label>
+                  <ImageView blendMode="ADD" fitHeight="122.0" fitWidth="242.0" layoutX="120.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/library-big-200px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="120.0" layoutY="332.0" prefHeight="43.0" prefWidth="183.0" text="Logue no Banco De Dados" textFill="WHITE">
+                     <font>
+                        <Font name="Lato Regular" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXTextField fx:id="usernameTF" layoutX="535.0" layoutY="168.0" prefHeight="26.0" prefWidth="249.0" />
+            <Label layoutX="535.0" layoutY="108.0" prefHeight="43.0" prefWidth="79.0" text="Username" />
+            <JFXPasswordField fx:id="passwordTF" layoutX="534.0" layoutY="270.0" prefHeight="26.0" prefWidth="249.0" />
+            <Label layoutX="535.0" layoutY="213.0" prefHeight="43.0" prefWidth="79.0" text="Password" />
+            <JFXButton fx:id="login" layoutX="535.0" layoutY="344.0" onAction="#loginBtn" prefHeight="33.0" prefWidth="67.0" style="-fx-background-color: #1384d6;" text="Login" />
+            <JFXCheckBox fx:id="cbConect" checkedColor="#04ff04" layoutX="535.0" layoutY="410.0" text="Conexao ao Banco" unCheckedColor="RED" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" style="-fx-background-color: #193bc4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="224.0" layoutY="47.0" text="Administrador" textFill="WHITE">
+                           <font>
+                              <Font name="Lato Light" size="42.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="227.0" layoutY="100.0" text="Sistema Biblioteca UFC" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="sair" layoutX="1041.0" layoutY="95.0" nodeOrientation="RIGHT_TO_LEFT" onAction="#close" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #44b6d6;" text="SAIR" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="252.0" text="Inserir" textFill="#171717">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="60.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXButton fx:id="livros1" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Livros" textFill="#5b5858">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="autores1" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Autores" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="usuarios1" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="curso1" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Curso" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="categoria1" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Categoria" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <Label prefHeight="30.0" prefWidth="252.0" text="Remover" textFill="#171717">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                        </Label>
+                        <JFXButton fx:id="livros2" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Livros" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="autores2" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Autores" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="usuarios2" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="curso2" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Curso" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="categoria2" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Categoria" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <Label prefHeight="30.0" prefWidth="252.0" text="Alterar" textFill="#171717">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                        </Label>
+                        <JFXButton fx:id="livros3" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Livros" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="autores3" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Autores" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="usuarios3" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="curso3" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Curso" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="categoria3" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Categoria" textFill="#5b5858">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
+                     </effect>
+                     <children>
+                        <ImageView fitHeight="122.0" fitWidth="125.0" layoutX="10.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/login_icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <ScrollPane layoutX="251.0" layoutY="182.0" prefHeight="406.0" prefWidth="810.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="182.0">
+                     <content>
+                        <VBox fx:id="pnl_scroll" prefHeight="404.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;" />
+                     </content>
+                  </ScrollPane>
+                  <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
