@@ -42,11 +42,11 @@
          </children>
       </AnchorPane>
       <JFXTextField fx:id="usernameTF" layoutX="473.0" layoutY="128.0" prefHeight="26.0" prefWidth="249.0" />
-      <Label layoutX="473.0" layoutY="68.0" prefHeight="43.0" prefWidth="79.0" text="Username" />
+      <Label layoutX="473.0" layoutY="68.0" prefHeight="43.0" prefWidth="79.0" text="Usuario" />
       <JFXPasswordField fx:id="passwordTF" layoutX="472.0" layoutY="230.0" prefHeight="26.0" prefWidth="249.0" />
-      <Label layoutX="473.0" layoutY="173.0" prefHeight="43.0" prefWidth="79.0" text="Password" />
+      <Label layoutX="473.0" layoutY="173.0" prefHeight="43.0" prefWidth="79.0" text="Senha" />
       <JFXCheckBox fx:id="cbConnect" checkedColor="GREEN" layoutX="467.0" layoutY="441.0" text="Conectado ao Banco" unCheckedColor="BLACK" />
-      <JFXButton fx:id="loginButton" buttonType="RAISED" defaultButton="true" layoutX="467.0" layoutY="312.0" onAction="#loginFunc" style="-fx-background-color: #1384d6;" text="Login" textFill="WHITE" textOverrun="LEADING_ELLIPSIS" />
+      <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="467.0" layoutY="312.0" onAction="#loginFunc" style="-fx-background-color: #1384d6;" text="Login" textFill="WHITE" textOverrun="LEADING_ELLIPSIS" />
       <JFXButton fx:id="cadastroBtn" layoutX="574.0" layoutY="312.0" onAction="#cadastroFunc" style="-fx-background-color: #1384d6;" text="Cadastro" textFill="WHITE" />
    </children>
 </AnchorPane>

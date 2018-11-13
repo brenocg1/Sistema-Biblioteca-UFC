@@ -85,21 +85,18 @@ public class HomeAdminController implements Initializable {
 
     @FXML
     private VBox pnl_scroll;
-
-    @FXML
-    void close(ActionEvent event) {
-
-    }
     
     @FXML
     void loginBtn(ActionEvent event){
     }
     
     @FXML
-    public void close(){
+    void close(ActionEvent event){
         Stage stage = (Stage) sair.getScene().getWindow();
         stage.close();
     }
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

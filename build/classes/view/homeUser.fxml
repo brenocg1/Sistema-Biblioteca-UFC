@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeUserController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="1271.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeUserController">
    <children>
-      <AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;">
+      <AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="740.0" prefWidth="1271.0" style="-fx-background-color: #fff;">
          <children>
             <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" style="-fx-background-color: #193bc4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -49,7 +49,7 @@
                         <Insets top="60.0" />
                      </VBox.margin>
                   </Label>
-                  <JFXButton fx:id="consultarLivros" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Consultar Livros" textFill="#5b5858">
+                  <JFXButton fx:id="consultarLivros" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#consultarLivrosAction" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Consultar Livros" textFill="#5b5858">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>

@@ -16,7 +16,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -64,6 +63,9 @@ public class loginController implements Initializable {
         conexao = ModuloConexao.conector(username, password);
         
         if(conexao != null){
+            ModuloConexao.userBD = username;
+            ModuloConexao.pwBD = password;
+            
             cbConect.setText("Conectado ao Banco de Dados");
             cbConect.setSelected(true);
             

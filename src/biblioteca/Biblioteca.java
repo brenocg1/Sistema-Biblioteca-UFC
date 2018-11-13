@@ -30,7 +30,7 @@ public class Biblioteca extends Application {
         
         primaryStage = stage;
                                                              //pasta com os arquivos .fxml(telas)
-        Parent root = FXMLLoader.load(getClass().getResource("/view/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/homeUser.fxml"));
         
         stage.initStyle(StageStyle.DECORATED);
         

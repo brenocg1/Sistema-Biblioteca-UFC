@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeAdminController">
+<AnchorPane id="AnchorPane" prefHeight="783.0" prefWidth="1271.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeAdminController">
    <children>
       <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #e0f6f9;">
          <children>
@@ -54,7 +54,7 @@
       </AnchorPane>
       <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;">
+            <AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="783.0" prefWidth="1271.0" style="-fx-background-color: #fff;">
                <children>
                   <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" style="-fx-background-color: #193bc4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -241,7 +241,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <ScrollPane layoutX="251.0" layoutY="182.0" prefHeight="406.0" prefWidth="810.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="182.0">
+                  <ScrollPane layoutX="251.0" layoutY="182.0" prefHeight="401.0" prefWidth="1019.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="182.0">
                      <content>
                         <VBox fx:id="pnl_scroll" prefHeight="404.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;" />
                      </content>

@@ -7,6 +7,7 @@ package controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
@@ -40,14 +41,29 @@ public class LoginAppController implements Initializable {
 
     @FXML
     private JFXButton cadastroBtn;
-
+    
+    @FXML
+    private JFXComboBox<String> cb_Tipo;
+    
+    
     
     public static Stage loginAppStage;
     
     @FXML
-    void cadastroFunc(ActionEvent event) {
-        biblioteca.Alertas.CadastroUser();
-        biblioteca.Alertas.Informacao(null, "Usuario cadastrado!");
+    void cadastroFunc(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/cadastroUser.fxml"));
+        AnchorPane root1 = (AnchorPane) fxmlLoader.load();
+
+//      Validacao com o banco...
+//        if(tipo.equals("User")){
+//            controllers.HomeUserController controller = fxmlLoader.<HomeUserController>getController();
+//            controller.setUser(usernameTF.getText());
+//        }
+
+        loginAppStage = new Stage();
+        loginAppStage.setTitle("Cadastro Aluno");
+        loginAppStage.setScene(new Scene(root1));
+        loginAppStage.show();
     }
 
     @FXML
@@ -82,6 +98,10 @@ public class LoginAppController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cbConnect.setSelected(true);
+        cb_Tipo.getItems().add("Aluno");
+        cb_Tipo.getItems().add("Funcionario");
+        cb_Tipo.getItems().add("Professor");
+        cb_Tipo.getItems().add("Bibliotecario");
     }    
     
 }
