@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/HomeAdminController.java</file>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/HomeUserController.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/modelos/login.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/LoginAppController.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/LoginDAO.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/LivroDAO.java</file>
         </group>
     </open-files>
 </project-private>
