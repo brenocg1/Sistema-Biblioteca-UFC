@@ -49,6 +49,6 @@
       <JFXCheckBox fx:id="cbConnect" checkedColor="GREEN" layoutX="467.0" layoutY="441.0" text="Conectado ao Banco" unCheckedColor="BLACK" />
       <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="473.0" layoutY="379.0" onAction="#loginFunc" style="-fx-background-color: #1384d6;" text="Login" textFill="WHITE" textOverrun="LEADING_ELLIPSIS" />
       <JFXButton fx:id="cadastroBtn" layoutX="580.0" layoutY="379.0" onAction="#cadastroFunc" style="-fx-background-color: #1384d6;" text="Cadastro" textFill="WHITE" />
-      <JFXComboBox fx:id="cb_Tipo" layoutX="467.0" layoutY="300.0" prefHeight="26.0" prefWidth="249.0" promptText="Tipo" unFocusColor="#ff3434" />
+      <JFXComboBox fx:id="cb_Tipo" layoutX="467.0" layoutY="300.0" prefHeight="26.0" prefWidth="249.0" promptText="Tipo de Acesso" unFocusColor="#ff3434" />
    </children>
 </AnchorPane>

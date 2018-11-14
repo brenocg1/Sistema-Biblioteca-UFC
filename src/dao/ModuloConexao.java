@@ -31,6 +31,10 @@ public class ModuloConexao {
         try {
             Class.forName(driver);
             conexao = DriverManager.getConnection(url, user, password);
+            
+            userBD = login;
+            pwBD = pw;
+            
             return conexao;
         }
         
