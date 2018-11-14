@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/modelos/login.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/validateLogin.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/biblioteca/Biblioteca.java</file>
             <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/LoginAppController.java</file>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/LoginDAO.java</file>
             <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/LivroDAO.java</file>
         </group>
     </open-files>
