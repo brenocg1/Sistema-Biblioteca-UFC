@@ -127,4 +127,9 @@ public class LivroDAO {
             return -1;
         }
     }
+    
+    
+    public static int reservar(userSysteam user){
+        
+    }
 }

@@ -6,14 +6,9 @@
 package controllers;
 
 import com.jfoenix.controls.JFXButton;
-import dao.LivroDAO;
-import dao.ModuloConexao;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,6 +63,18 @@ public class HomeUserController implements Initializable {
         pnl_scroll.getChildren().add(node);
     }
     
+    @FXML
+    void reservarButton(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        Node node = (Node)FXMLLoader.load(getClass().getResource("/view/reservarLivro.fxml"));
+
+//        Como passar o usuario para essa funcao
+//        controllers.ReservarLivroController controller = node.<ReservarLivroController>getController();
+//        controller.setUser(user);
+        
+        pnl_scroll.getChildren().add(node);
+    }
+
     
     @FXML
     public void close(){
