@@ -21,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import modelos.userSystem;
 
 /**
  * FXML Controller class
@@ -29,23 +30,10 @@ import javafx.stage.Stage;
  */
 public class HomeUserController implements Initializable {
     
-    private String user;
-    private String senha;
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
+    userSystem user;
+    
+    public void setUser(userSystem user){
         this.user = user;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
     
     @FXML
