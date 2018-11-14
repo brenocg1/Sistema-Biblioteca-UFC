@@ -62,7 +62,6 @@ public class LivroDAO {
     }
 
     public static String getLivros(String nome, String autor, String ano, String editora) throws SQLException{
-        //Corrigir a data
         String sqlQuery = "select titulo, newtable.nome as Autor, `descricao-categoria` as Categoria, newtable.editora as Editora, newtable.`ano-de-lancamento` as Ano_Publicado "
                 + "from tb_categoria natural join (select * from tb_livro natural join tb_autor)newtable" +
                           " where titulo=? or newtable.nome=? or `ano-de-lancamento`= ? or editora=?";
@@ -91,5 +90,41 @@ public class LivroDAO {
         psmt.close();
         
         return null;
+    }
+    
+    public static int getDispLivros(String titulo) throws SQLException{
+        //qtd de copias - count(do emprestimo)
+        
+        String sql = "select `qtd-copias`, isbn from tb_livro where titulo = ?";
+        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql);
+        
+        psmt.setString(1, titulo);
+        
+        ResultSet rs = psmt.executeQuery();
+        
+        String isbn = null;
+        int qtd = -1;
+        
+        if(rs.next()){
+            qtd = Integer.parseInt(rs.getString(1)); 
+            isbn = rs.getString(2);
+        }else{
+            return -1;
+        }
+        
+        //descobrindo quantos emprestimos o livro tem
+        String sql2 = "select count(*) from tb_emprestimo where isbn = ?";
+        psmt = ModuloConexao.conector().prepareStatement(sql2);
+        
+        psmt.setString(1, isbn);
+        
+        rs = psmt.executeQuery();
+        
+        if(rs.next()){
+            qtd = qtd - rs.getInt(1);
+            return qtd;
+        }else{
+            return -1;
+        }
     }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="761.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ConsultarDispLivroController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="1024.0" style="-fx-background-color: #2a75ed;">
+         <children>
+            <Label layoutX="191.0" layoutY="62.0" text="Disponibilidade de Livros" textFill="WHITE">
+               <font>
+                  <Font name="Lato Thin" size="60.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="tf_nomeLivro" layoutX="194.0" layoutY="291.0" />
+      <Label layoutX="194.0" layoutY="255.0" text="Nome do Livro">
+         <font>
+            <Font name="Lato Heavy" size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_procurar" layoutX="194.0" layoutY="355.0" onAction="#procurarAction" style="-fx-background-color: #2a75ed;" text="Procurar" textFill="WHITE" />
+      <Label layoutX="191.0" layoutY="435.0" text="Quantidade Disponivel">
+         <font>
+            <Font name="Lato Heavy" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="ta_qtdDisp" layoutX="191.0" layoutY="468.0" prefHeight="39.0" prefWidth="134.0" />
+      <Label layoutX="194.0" layoutY="231.0" text="Digite o nome do livro">
+         <font>
+            <Font name="Lato Heavy" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -68,7 +68,7 @@
                         <Insets left="50.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="dispExem" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Disponibilidade de Exemplares" textFill="#5b5858">
+                  <JFXButton fx:id="dispExem" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#dispExemAction" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Disponibilidade de Exemplares" textFill="#5b5858">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -100,7 +100,7 @@
             </Pane>
             <ScrollPane layoutX="251.0" layoutY="182.0" prefHeight="406.0" prefWidth="810.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="182.0">
                <content>
-                  <VBox fx:id="pnl_scroll" prefHeight="404.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;" />
+                  <VBox fx:id="pnl_scroll" prefHeight="404.0" prefWidth="1024.0" spacing="20.0" style="-fx-background-color: #fff;" />
                </content>
             </ScrollPane>
             <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
