@@ -73,7 +73,7 @@ public class LoginAppController implements Initializable {
     void loginFunc(ActionEvent event) throws IOException {
         System.out.println("login app clicked");
         
-        if(usernameTF.getText().equals("admin") && passwordTF.getText().equals("admin")){
+        if(usernameTF.getText().equals("admin") && passwordTF.getText().equals("root")){
             try {
                 trocarTela("homeAdmin.fxml", "Administrador");
                 return;

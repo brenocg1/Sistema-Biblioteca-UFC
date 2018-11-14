@@ -56,9 +56,18 @@ public class HomeUserController implements Initializable {
     
     @FXML
     void consultarLivrosAction(ActionEvent event) throws IOException{
+        pnl_scroll.getChildren().clear();
         Node node = (Node)FXMLLoader.load(getClass().getResource("/view/consultarLivros.fxml"));
         pnl_scroll.getChildren().add(node);
     }
+    
+    @FXML
+    void dispExemAction(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        Node node = (Node)FXMLLoader.load(getClass().getResource("/view/consultarDispLivro.fxml"));
+        pnl_scroll.getChildren().add(node);
+    }
+    
     
     @FXML
     public void close(){
