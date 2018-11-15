@@ -23,7 +23,7 @@ public class ModuloConexao {
         // a linha abaixo "chama" o driver que eu instalei(windows importa)
         String driver = "com.mysql.jdbc.Driver";   
         //informacoes do banco                 
-        String url = "jdbc:mysql://localhost:3306/biblioteca?autoReconnect=true&useSSL=false";
+        String url = "jdbc:mysql://localhost:3306/biblioteca?useSSL=false";
         String user = login;
         String password = pw;
         

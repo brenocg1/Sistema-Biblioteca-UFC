@@ -6,10 +6,13 @@
  */
 package dao;
 
+import biblioteca.Alertas;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import modelos.userSystem;
 
 /**
  *
@@ -128,8 +131,51 @@ public class LivroDAO {
         }
     }
     
-    
-    public static int reservar(userSysteam user){
+    public static String getIsbn(String titulo) throws SQLException{
+        String sql = "select isbn from tb_livro where titulo=?";
+        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql);
+        psmt.setString(1, titulo);
         
+        ResultSet rs = psmt.executeQuery();
+        
+        if(rs.next()){
+            String isbn = rs.getString(1);
+            rs.close();
+            return isbn;
+        }else{
+            return null;
+        }
+        
+        
+        
+    }
+    
+    public static int reservar(userSystem user, String titulo) throws SQLException{
+        int cod = dao.userSysDAO.getUserID(user);
+        String date = String.valueOf(LocalDate.now().getYear()) + "-" + String.valueOf(LocalDate.now().getMonth().getValue()) + "-" + String.valueOf(LocalDate.now().getDayOfMonth());
+        String isbn = getIsbn(titulo);
+        
+        System.out.println(date + "\n" + isbn + "\n" + cod);
+        
+        
+        if(isbn == null){
+            Alertas.Erro("Livro nao encontrado", "Verifique o titulo digitado");
+            return -1;
+        }
+        
+        String sql = "insert into tb_reserva "
+                + "(`data-reserva`, isbn, `cod-pessoa`) "
+                + "values (?, ?, ?)";
+    
+        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql);
+        
+        psmt.setString(1, date);
+        psmt.setString(2, isbn);
+        psmt.setInt(3, cod);
+        
+        psmt.executeUpdate();
+        
+        
+        return 0;
     }
 }
