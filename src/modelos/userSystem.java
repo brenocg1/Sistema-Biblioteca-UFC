@@ -20,6 +20,13 @@ public class userSystem {
         this.tipoAcesso = tipoAcesso;
     }
 
+    @Override
+    public String toString() {
+        return getLogin() + " " + getTipoAcesso();
+    }
+
+    
+    
     public String getLogin() {
         return login;
     }

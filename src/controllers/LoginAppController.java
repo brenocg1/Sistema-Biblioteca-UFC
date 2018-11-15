@@ -79,6 +79,7 @@ public class LoginAppController implements Initializable {
                 System.out.println("falha na troca de tela");
             }
         }
+        
         String acess = cb_Tipo.getSelectionModel().getSelectedItem().equals("Aluno") ? "alun" :
                        cb_Tipo.getSelectionModel().getSelectedItem().equals("Professor") ? "prof" :
                        cb_Tipo.getSelectionModel().getSelectedItem().equals("Funcionario") ? "func" :

@@ -5,8 +5,10 @@
  */
 package controllers;
 
+import biblioteca.Alertas;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,11 +33,20 @@ public class ReservarLivroController implements Initializable {
 
     @FXML
     void reservarBtn(ActionEvent event) {
-        
+        try {
+            if(dao.LivroDAO.reservar(user, tf_titulo.getText()) != -1){
+                Alertas.Informacao("Livro Reservado!", "Livro reservado com sucesso!");
+            }else{
+                Alertas.Aviso("Nao foi possivel reservar seu livro", "Verifique o nome");
+            }
+        } catch (SQLException ex) {
+            System.out.println("falha na reserva do livro NIVEL CONTROLLER");
+        }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        setUser(new userSystem("teste", "testesenha", "alun"));
     }    
     
 }

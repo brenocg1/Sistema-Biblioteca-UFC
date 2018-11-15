@@ -6,14 +6,18 @@
 package controllers;
 
 import com.jfoenix.controls.JFXButton;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import modelos.userSystem;
@@ -62,17 +66,22 @@ public class HomeUserController implements Initializable {
         Node node = (Node)FXMLLoader.load(getClass().getResource("/view/consultarDispLivro.fxml"));
         pnl_scroll.getChildren().add(node);
     }
+
+//        As informacoes do usuario estao chegando certo nesse controlador!      
+//        System.out.println(user.toString());    
     
     @FXML
     void reservarButton(ActionEvent event) throws IOException {
         pnl_scroll.getChildren().clear();
-        Node node = (Node)FXMLLoader.load(getClass().getResource("/view/reservarLivro.fxml"));
-
-//        Como passar o usuario para essa funcao
-//        controllers.ReservarLivroController controller = node.<ReservarLivroController>getController();
-//        controller.setUser(user);
         
-        pnl_scroll.getChildren().add(node);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/reservarLivro.fxml"));
+        AnchorPane root1 = (AnchorPane) loader.load();
+        
+//         Criando instancia do controller pra passar o usuario desse controlador
+        ReservarLivroController controller = loader.getController();
+        controller.setUser(user);
+
+        pnl_scroll.getChildren().add(root1);
     }
 
     
@@ -84,7 +93,6 @@ public class HomeUserController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
     
 }
