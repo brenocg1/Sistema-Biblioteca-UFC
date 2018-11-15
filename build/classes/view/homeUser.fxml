@@ -76,7 +76,7 @@
                         <Insets left="50.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="reservar" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Realizar Reservas" textFill="#5b5858">
+                  <JFXButton fx:id="reservar" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#reservarButton" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Realizar Reservas" textFill="#5b5858">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
