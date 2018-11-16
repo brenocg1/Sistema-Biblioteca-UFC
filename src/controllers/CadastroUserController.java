@@ -5,13 +5,19 @@
  */
 package controllers;
 
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextInputDialog;
+import modelos.Aluno;
+import modelos.telefone;
 
 /**
  * FXML Controller class
@@ -24,14 +30,13 @@ import javafx.fxml.Initializable;
 //Pegar data de conclusao prevista, pelo DatePicker de ingresso 
 public class CadastroUserController implements Initializable {
     
+    ArrayList<telefone> telefones = new ArrayList<>();
+    
     @FXML
     private JFXTextField tx_nome;
 
     @FXML
     private JFXTextField tx_matr;
-
-    @FXML
-    private JFXComboBox<?> cb_curso;
 
     @FXML
     private JFXTextField tx_endr;
@@ -41,6 +46,28 @@ public class CadastroUserController implements Initializable {
 
     @FXML
     private JFXDatePicker datePicker_dataIngress;
+
+    @FXML
+    private JFXTextField tx_curso;
+
+    @FXML
+    void adcTel(ActionEvent event) {
+        TextInputDialog dialog = new TextInputDialog("telefone");
+        dialog.setTitle("Cadastro Telefones");
+        dialog.setHeaderText("Adicione mais um telefone");
+        dialog.setContentText("Coloque um telefone, caso queira colocar mais clique de novo");
+        
+        Optional<String> result = dialog.showAndWait();
+        
+        if (result.isPresent()){
+            telefones.add(new telefone(result.get()));
+        }
+    }
+
+    @FXML//chamar a dao e testar essa parada do Date...
+    void cadastrar(ActionEvent event){
+        Aluno aluno = new Aluno(telefones, tx_nome.getText(), tx_matr.getText(), tx_endr.getText(), Date.valueOf(datePicker_dataIngress.getValue().toString()), tx_curso.getText());
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
