@@ -3,6 +3,13 @@
 ## Começando
 As instruções abaixo, apesar de ainda em construção, vai guiá-lo para preparar todo o ambiente e rodar na sua máquina a aplicação, independente do sistema operacional que estiver usando.
 
+1. Crie o banco com o script de povoamento
+2. Use os arquivos .sql para criar as triggers e procedures
+
+
+##### Observacoes
+> a modelagem nao esta igual ao script de povoamento, use o script para criar o banco.
+
 ## Pré-requisitos
 * [NetBeans](https://netbeans.org/downloads/)
 > ou sua IDE de preferência, mas mostraremos com essa.
