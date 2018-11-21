@@ -31,4 +31,23 @@ public class userSysDAO {
             return -1;
         }
     }
+    
+    public static int getLivrosEmpres(userSystem user) throws SQLException{
+        int cod = getUserID(user);
+        
+        String sql = "select count(*) from tb_emprestimo where `cod-pessoa`=? and `status-devolucao`=0";
+        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql);
+        psmt.setInt(1, cod);
+        
+        ResultSet rs = psmt.executeQuery();
+        
+        if(rs.next()){
+            int count = rs.getInt(1);
+            rs.close();
+            return count;
+        }else{
+            System.out.println("erro na consulta de quantos livros o usuario ja pegou");
+            return -1;   
+        }
+    }
 }

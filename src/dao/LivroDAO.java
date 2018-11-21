@@ -116,7 +116,7 @@ public class LivroDAO {
         }
         
         //descobrindo quantos emprestimos o livro tem
-        String sql2 = "select count(*) from tb_emprestimo where isbn = ?";
+        String sql2 = "select count(*) from tb_emprestimo where isbn = ? and `status-devolucao`=0";
         psmt = ModuloConexao.conector().prepareStatement(sql2);
         
         psmt.setString(1, isbn);
@@ -125,6 +125,7 @@ public class LivroDAO {
         
         if(rs.next()){
             qtd = qtd - rs.getInt(1);
+            rs.close();
             return qtd;
         }else{
             return -1;

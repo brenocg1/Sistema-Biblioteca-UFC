@@ -66,7 +66,8 @@ public class CadastroUserController implements Initializable {
 
     @FXML//chamar a dao e testar essa parada do Date...
     void cadastrar(ActionEvent event){
-        Aluno aluno = new Aluno(telefones, tx_nome.getText(), tx_matr.getText(), tx_endr.getText(), Date.valueOf(datePicker_dataIngress.getValue().toString()), tx_curso.getText());
+        Aluno aluno = new Aluno(telefones, tx_nome.getText(), tx_matr.getText(), tx_endr.getText(), datePicker_dataIngress.getValue().toString(), tx_curso.getText());
+        System.out.println(datePicker_dataIngress.getValue().toString());
     }
 
     @Override

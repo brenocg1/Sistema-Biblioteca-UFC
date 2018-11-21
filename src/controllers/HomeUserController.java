@@ -83,7 +83,21 @@ public class HomeUserController implements Initializable {
 
         pnl_scroll.getChildren().add(root1);
     }
+    
+    
+    @FXML
+    void emprestimosBtn(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/emprestimoLivro.fxml"));
+        AnchorPane root1 = (AnchorPane) loader.load();
+        
+//         Criando instancia do controller pra passar o usuario desse controlador
+        ReservarLivroController controller = loader.getController();
+        controller.setUser(user);
 
+        pnl_scroll.getChildren().add(root1);
+    }
     
     @FXML
     public void close(){

@@ -18,10 +18,10 @@ public class Aluno {
     String nome;
     String matricula;
     String endereco;
-    Date dataIngresso;
+    String dataIngresso;
     String curso;
 
-    public Aluno(ArrayList<telefone> telefones, String nome, String matricula, String endereco, Date dataIngresso, String curso) {
+    public Aluno(ArrayList<telefone> telefones, String nome, String matricula, String endereco, String dataIngresso, String curso) {
         this.telefones = telefones;
         this.nome = nome;
         this.matricula = matricula;
