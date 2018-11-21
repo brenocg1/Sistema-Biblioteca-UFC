@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `biblioteca`.`tb_emprestimo` (
   `data-emprestimo` DATE NOT NULL,
   `isbn` VARCHAR(13) NOT NULL,
   `cod-pessoa` INT NOT NULL,
-  `status-devolucao` BIT NOT NULL DEFAULT 0, 
+  `status-devolucao` INT NOT NULL DEFAULT 0, 
   PRIMARY KEY (`cod-emprestimo`),
   CONSTRAINT `fk_tb_emprestimo_tb_livro1`
     FOREIGN KEY (`isbn`)
