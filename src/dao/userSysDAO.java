@@ -7,6 +7,7 @@ package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import modelos.userSystem;
 
@@ -49,5 +50,50 @@ public class userSysDAO {
             System.out.println("erro na consulta de quantos livros o usuario ja pegou");
             return -1;   
         }
+    }
+    
+    public static String printResultSet(ResultSet rs) throws SQLException {
+        
+        if(rs == null) return null;
+        
+        String resultado = "";
+        // Prepare metadata object and get the number of columns.
+        ResultSetMetaData rsmd = rs.getMetaData();
+        int columnsNumber = rsmd.getColumnCount();
+
+        // Print column names (a header).
+        for (int i = 1; i <= columnsNumber; i++) {
+            if (i > 1) resultado += " | ";
+            resultado += rsmd.getColumnName(i);
+        }
+        resultado += "\n";
+        resultado += "=======++=======++=======++=======++=======++=======";
+        resultado += "\n";
+        while (rs.next()) {
+            for (int i = 1; i <= columnsNumber; i++) {
+                if (i > 1) resultado += " | ";
+                resultado += rs.getString(i);
+            }
+            resultado += "\n";
+        }
+        return resultado;
+    }
+    
+    public static String getUsers(String nome) throws SQLException{
+        PreparedStatement psmt = null;
+        if(!nome.equals("")){
+            String sql = "select `nome-usuario`, `tipo-acesso` from tb_usuario natural join tb_pessoa WHERE `nome`=?";
+        
+            psmt = ModuloConexao.conector().prepareStatement(sql);
+        
+            psmt.setString(1, nome);
+        }else{
+            String sql = "SELECT `nome-usuario`, `tipo-acesso` FROM tb_usuario";
+            psmt = ModuloConexao.conector().prepareStatement(sql);
+        }
+        
+        ResultSet rs = psmt.executeQuery();
+        
+        return printResultSet(rs);
     }
 }
