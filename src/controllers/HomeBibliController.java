@@ -6,10 +6,14 @@
 package controllers;
 
 import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -50,6 +54,22 @@ public class HomeBibliController implements Initializable {
         Stage stage = (Stage) sair.getScene().getWindow();
         // do what you have to do
         stage.close();
+    }
+    
+    @FXML
+    void consultarLivros(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        Node node = (Node)FXMLLoader.load(getClass().getResource("/view/consultarLivros.fxml"));
+        pnl_scroll.getChildren().add(node);
+    }
+    
+    @FXML
+    void consultarUsuarios(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        System.out.println("nao passou aaaaaa");
+        Node node = (Node)FXMLLoader.load(getClass().getResource("/view/consultarUsarios.fxml"));
+        System.out.println("passou");
+        pnl_scroll.getChildren().add(node);
     }
     
     @Override

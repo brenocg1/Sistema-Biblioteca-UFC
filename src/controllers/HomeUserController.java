@@ -92,8 +92,8 @@ public class HomeUserController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/emprestimoLivro.fxml"));
         AnchorPane root1 = (AnchorPane) loader.load();
         
-//         Criando instancia do controller pra passar o usuario desse controlador
-        ReservarLivroController controller = loader.getController();
+//      Criando instancia do controller pra passar o usuario desse controlador
+        EmprestimoLivroController controller = loader.getController();
         controller.setUser(user);
 
         pnl_scroll.getChildren().add(root1);

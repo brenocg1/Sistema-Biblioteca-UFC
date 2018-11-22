@@ -6,9 +6,7 @@
 package controllers;
 
 import com.jfoenix.controls.JFXTextField;
-import dao.ModuloConexao;
 import java.net.URL;
-import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -29,19 +27,30 @@ public class EmprestimoLivroController implements Initializable {
 
     @FXML
     void emprestimoBtn(ActionEvent event) throws SQLException {
+        
+        
         String isbn = dao.LivroDAO.getIsbn(ta_titulo.getText());
         
         int cod = dao.userSysDAO.getUserID(user);
-        String sql = "{call pr_cadastra_emprestimo`(?, ?)}";
         
-//        
+        if(user.getTipoAcesso().equals("alun") && dao.emprestimoDAO.getNumbersEmpres(user) >= 3){
+            biblioteca.Alertas.Erro("Falha no emprestimo", "Este aluno ja possui 3 livros com emprestimo");
+            return;
+        }
         
-        CallableStatement callableStatement = null;
-       
-        callableStatement = ModuloConexao.conector().prepareCall(sql);
-       
-        callableStatement.setInt(1, cod);
-        callableStatement.setString(2, isbn);
+        else if(user.getTipoAcesso().equals("func") && dao.emprestimoDAO.getNumbersEmpres(user) >= 4){
+            biblioteca.Alertas.Erro("Falha no emprestimo", "Este funcionario ja possui 4 livros com emprestimo");
+            return;
+        }
+        
+        else if(user.getTipoAcesso().equals("prof") && dao.emprestimoDAO.getNumbersEmpres(user) >= 5){
+            biblioteca.Alertas.Erro("Falha no emprestimo", "Este professor ja possui 5 livros com emprestimo");
+            return;
+        }
+        
+        dao.emprestimoDAO.insertEmprestimo(cod, isbn);
+        biblioteca.Alertas.Informacao("Emprestimo Realizado com Sucesso", "Voce tem: " + dao.emprestimoDAO.getNumbersEmpres(user) + " livros para devolver");
+//        System.out.println("sucesso na insercao de emprestimo");
     }
     
     @Override

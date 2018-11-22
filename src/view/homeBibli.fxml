@@ -49,7 +49,7 @@
                         <Insets top="60.0" />
                      </VBox.margin>
                   </Label>
-                  <JFXButton fx:id="consultarLivros" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Livros" textFill="#5b5858">
+                  <JFXButton fx:id="consultarLivros" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#consultarLivros" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Livros" textFill="#5b5858">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -60,7 +60,7 @@
                         <Insets left="50.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="consultarUsuarios" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+                  <JFXButton fx:id="consultarUsuarios" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#consultarUsuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
