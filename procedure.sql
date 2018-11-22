@@ -31,3 +31,4 @@ begin
 	insert into tb_emprestimo (`data-devolucao`, `data-emprestimo` , isbn, `cod-pessoa`) values (@dt_devolucao, now(), var_isbn, var_cod_pessoa);
 
 end $$;
+delimiter ;
