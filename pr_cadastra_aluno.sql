@@ -13,3 +13,4 @@ begin
     values (var_matricula, var_dt_ingresso, date_add(var_dt_ingresso,interval 5 year), var_cd_curso, var_cd_pessoa);
 
 end $$;
+delimiter ;
