@@ -5,8 +5,8 @@
  */
 package modelos;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -18,10 +18,10 @@ public class Aluno {
     String nome;
     String matricula;
     String endereco;
-    String dataIngresso;
+    Date dataIngresso;
     String curso;
 
-    public Aluno(ArrayList<telefone> telefones, String nome, String matricula, String endereco, String dataIngresso, String curso) {
+    public Aluno(ArrayList<telefone> telefones, String nome, String matricula, String endereco, Date dataIngresso, String curso) {
         this.telefones = telefones;
         this.nome = nome;
         this.matricula = matricula;
@@ -29,6 +29,56 @@ public class Aluno {
         this.dataIngresso = dataIngresso;
         this.curso = curso;
     }
+
+    public ArrayList<telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(ArrayList<telefone> telefones) {
+        this.telefones = telefones;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public Date getDataIngresso() {
+        return dataIngresso;
+    }
+
+    public void setDataIngresso(Date dataIngresso) {
+        this.dataIngresso = dataIngresso;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+    
+    
 
     @Override
     public String toString(){

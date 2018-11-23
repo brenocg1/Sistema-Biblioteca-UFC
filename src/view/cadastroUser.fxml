@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
@@ -54,6 +55,6 @@
             <Font name="Lato Light" size="25.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tx_curso" layoutX="692.0" layoutY="211.0" />
+      <JFXComboBox fx:id="cb_curso" focusColor="#0040ff" layoutX="692.0" layoutY="217.0" prefHeight="26.0" prefWidth="260.0" unFocusColor="RED" />
    </children>
 </AnchorPane>

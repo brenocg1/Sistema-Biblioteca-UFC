@@ -18,6 +18,6 @@ public class telefone {
 
     @Override
     public String toString() {
-        return super.toString(); 
+        return telefone; 
     }
 }

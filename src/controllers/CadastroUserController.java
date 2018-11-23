@@ -5,10 +5,13 @@
  */
 package controllers;
 
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
-import java.sql.Date;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -16,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextInputDialog;
+import javafx.stage.Stage;
 import modelos.Aluno;
 import modelos.telefone;
 
@@ -46,9 +50,10 @@ public class CadastroUserController implements Initializable {
 
     @FXML
     private JFXDatePicker datePicker_dataIngress;
-
+    
     @FXML
-    private JFXTextField tx_curso;
+    private JFXComboBox<String> cb_curso;
+
 
     @FXML
     void adcTel(ActionEvent event) {
@@ -65,13 +70,55 @@ public class CadastroUserController implements Initializable {
     }
 
     @FXML//chamar a dao e testar essa parada do Date...
-    void cadastrar(ActionEvent event){
-        Aluno aluno = new Aluno(telefones, tx_nome.getText(), tx_matr.getText(), tx_endr.getText(), datePicker_dataIngress.getValue().toString(), tx_curso.getText());
-        System.out.println(datePicker_dataIngress.getValue().toString());
+    void cadastrar(ActionEvent event) throws ParseException{
+        
+        if(tx_nome.getText().equals("") ||
+           tx_endr.getText().equals("") ||
+           tx_matr.getText().equals("") ||
+           tx_telf.getText().equals(""))
+        {
+            biblioteca.Alertas.Erro("Campo Vazio!", "Algum campo esta vazio, verifique e preecha");
+            return;
+        }
+        
+        
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date parsed = format.parse(datePicker_dataIngress.getValue().toString());
+        
+        telefones.add(new telefone(tx_telf.getText()));
+        
+        Aluno aluno = new Aluno(telefones, tx_nome.getText(), tx_matr.getText(), tx_endr.getText(), parsed, cb_curso.getSelectionModel().getSelectedItem());
+        System.out.println(cb_curso.getSelectionModel().getSelectedItem());
+        try {
+            dao.AlunoDAO.cadastrarAluno(aluno);
+        } catch (SQLException ex) {
+            System.out.println("exception na dao");
+            ex.printStackTrace();
+        }
+        
+        biblioteca.Alertas.Informacao("Cadastrado Realizado!", "Novo aluno cadastrado com successo!");
+        
+        //fechando tela de cadastro
+        Stage stage = (Stage) tx_nome.getScene().getWindow();
+        stage.close();
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb){
+        tx_endr.setText("");
+        tx_nome.setText("");
+        tx_telf.setText("");
+        tx_matr.setText("");
+        
+        ArrayList<String> cursos = null;
+        try {
+            cursos = dao.AlunoDAO.getCursos();
+        } catch (SQLException ex) {
+            System.out.println("problema no getCursos()");
+        }
+        
+        for(String curso : cursos)
+            cb_curso.getItems().add(curso);
     }    
     
 }
