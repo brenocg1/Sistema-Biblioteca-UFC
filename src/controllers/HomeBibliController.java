@@ -72,6 +72,14 @@ public class HomeBibliController implements Initializable {
         pnl_scroll.getChildren().add(node);
     }
     
+    
+    @FXML
+    void consultarReserva(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        Node node = (Node)FXMLLoader.load(getClass().getResource("/view/consultarReservas.fxml"));
+        pnl_scroll.getChildren().add(node);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TODO

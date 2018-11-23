@@ -39,7 +39,7 @@ public class LivroDAO {
     //Duas formas diferentes de printar a tabela...
     public static String printResultSet(ResultSet rs) throws SQLException {
         
-        if(rs == null) return "";
+        if(rs == null) return null;
         
         String resultado = "";
         // Prepare metadata object and get the number of columns.
@@ -179,4 +179,20 @@ public class LivroDAO {
         
         return 0;
     }
+    
+    public static String consultarReservas(String nome, String livro) throws SQLException{
+        
+        String isbn = getIsbn(livro);
+        
+        String sql = "SELECT `data-reserva`, isbn, nome FROM tb_reserva natural join tb_pessoa WHERE nome=? or isbn=?";
+        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql);
+        
+        psmt.setString(1, nome);
+        psmt.setString(2, isbn);
+        
+        ResultSet rs = psmt.executeQuery();
+        
+        return printResultSet(rs);
+    }
+    
 }
