@@ -9,11 +9,14 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -91,9 +94,19 @@ public class HomeAdminController implements Initializable {
     }
     
     @FXML
-    void close(ActionEvent event){
+    void close(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/loginApp.fxml"));
+        AnchorPane root1 = (AnchorPane) fxmlLoader.load();
+        
+        Stage loginAppStage;
+        loginAppStage = new Stage();
+        loginAppStage.setTitle("Sistema Biblioteca UFC");
+        loginAppStage.setScene(new Scene(root1));
+        
         Stage stage = (Stage) sair.getScene().getWindow();
         stage.close();
+        
+        loginAppStage.show();
     }
 
     

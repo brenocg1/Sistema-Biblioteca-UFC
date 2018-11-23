@@ -131,6 +131,9 @@ public class LoginAppController implements Initializable {
         loginAppStage.setTitle("Sistema Biblioteca UFC - " + tipo);
         loginAppStage.setScene(new Scene(root1));
         
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        stage.close();
+        
         controllers.loginController.loginStage.close();
         loginAppStage.show();
     }

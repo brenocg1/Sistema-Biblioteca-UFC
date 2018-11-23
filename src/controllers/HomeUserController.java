@@ -6,6 +6,7 @@
 package controllers;
 
 import com.jfoenix.controls.JFXButton;
+import static controllers.LoginAppController.loginAppStage;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -100,9 +102,19 @@ public class HomeUserController implements Initializable {
     }
     
     @FXML
-    public void close(){
+    public void close() throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/loginApp.fxml"));
+        AnchorPane root1 = (AnchorPane) fxmlLoader.load();
+        
+        Stage loginAppStage;
+        loginAppStage = new Stage();
+        loginAppStage.setTitle("Sistema Biblioteca UFC");
+        loginAppStage.setScene(new Scene(root1));
+        
         Stage stage = (Stage) sair.getScene().getWindow();
         stage.close();
+        
+        loginAppStage.show();
     }
     
     @Override
