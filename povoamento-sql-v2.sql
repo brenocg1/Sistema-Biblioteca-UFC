@@ -383,10 +383,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `biblioteca`;
-INSERT INTO `biblioteca`.`tb_emprestimo` (`cod-emprestimo`, `data-devolucao`, `data-emprestimo`, `isbn`, `cod-pessoa`) VALUES (1, '2018-01-08', '2018-01-01', '978535210958', 1);
-INSERT INTO `biblioteca`.`tb_emprestimo` (`cod-emprestimo`, `data-devolucao`, `data-emprestimo`, `isbn`, `cod-pessoa`) VALUES (2, '2018-02-09', '2018-02-02', '978235810321', 2);
-INSERT INTO `biblioteca`.`tb_emprestimo` (`cod-emprestimo`, `data-devolucao`, `data-emprestimo`, `isbn`, `cod-pessoa`) VALUES (3, '2018-03-10', '2018-03-03', '978675905472', 3);
-
+INSERT INTO `biblioteca`.`tb_emprestimo` (`cod-emprestimo`, `data-devolucao`, `data-emprestimo`, `isbn`, `cod-pessoa`) VALUES (1, '2018-01-15', '2018-01-01', '978535210958', 1);
 COMMIT;
 
 
