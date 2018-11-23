@@ -20,6 +20,7 @@ As instruções abaixo, apesar de ainda em construção, vai guiá-lo para prepa
 * [JFoenix](https://github.com/jfoenixadmin/JFoenix) 
 > usado em alguns componentes do fxml
 
+* JavaFx
 
 ## Autores
 * **Breno Campos**
