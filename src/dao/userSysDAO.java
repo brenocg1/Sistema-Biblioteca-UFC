@@ -79,6 +79,23 @@ public class userSysDAO {
         return resultado;
     }
     
+    public static int getCodPessoa(String nome) throws SQLException{
+        String sql = "SELECT `cod-pessoa` FROM tb_pessoa WHERE nome=?";
+        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql);
+        
+        psmt.setString(1, nome);
+        
+        ResultSet rs = psmt.executeQuery();
+        
+        if(rs.next()){
+            int cod = rs.getInt(1);
+            rs.close();
+            return cod;
+        }else{
+            return -1;
+        }
+    }
+    
     public static String getUsers(String nome) throws SQLException{
         PreparedStatement psmt = null;
         if(!nome.equals("")){

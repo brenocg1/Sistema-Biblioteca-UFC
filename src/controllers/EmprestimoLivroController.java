@@ -28,7 +28,6 @@ public class EmprestimoLivroController implements Initializable {
     @FXML
     void emprestimoBtn(ActionEvent event) throws SQLException {
         
-        
         String isbn = dao.LivroDAO.getIsbn(ta_titulo.getText());
         
         int cod = dao.userSysDAO.getUserID(user);

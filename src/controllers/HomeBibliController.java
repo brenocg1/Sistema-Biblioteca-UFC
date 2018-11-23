@@ -90,6 +90,25 @@ public class HomeBibliController implements Initializable {
         pnl_scroll.getChildren().add(node);
     }
     
+    @FXML
+    void realizarEmprestimo(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/emprestimoLivroBibli.fxml"));
+        AnchorPane root1 = (AnchorPane) loader.load();
+
+        pnl_scroll.getChildren().add(root1);
+    }
+    
+    
+    @FXML
+    void darBaixa(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/emprestimoDarBaixa.fxml"));
+        AnchorPane root1 = (AnchorPane) loader.load();
+        pnl_scroll.getChildren().add(root1);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TODO
