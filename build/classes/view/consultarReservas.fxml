@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="747.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ConsultarReservasController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="1024.0" style="-fx-background-color: #4286f4;">
+         <children>
+            <Label layoutX="275.0" layoutY="64.0" text="Consultar Reservas" textFill="WHITE">
+               <font>
+                  <Font name="Lato Light" size="58.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="tf_nomeUser" layoutX="209.0" layoutY="274.0" />
+      <Label layoutX="209.0" layoutY="234.0" prefHeight="0.0" prefWidth="195.0" text="Nome Usuario">
+         <font>
+            <Font name="Lato Light" size="19.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="ta_resultado" layoutX="209.0" layoutY="492.0" />
+      <JFXButton layoutX="209.0" layoutY="430.0" onAction="#btnProcurar" style="-fx-background-color: #4286f4;" text="Procurar" textFill="WHITE" />
+      <JFXTextField fx:id="tf_nomeLivro" layoutX="404.0" layoutY="273.0" />
+      <Label layoutX="404.0" layoutY="233.0" prefHeight="0.0" prefWidth="195.0" text="Nome do Livro">
+         <font>
+            <Font name="Lato Light" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
