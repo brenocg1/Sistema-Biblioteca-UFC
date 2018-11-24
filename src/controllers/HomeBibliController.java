@@ -76,9 +76,7 @@ public class HomeBibliController implements Initializable {
     @FXML
     void consultarUsuarios(ActionEvent event) throws IOException {
         pnl_scroll.getChildren().clear();
-        System.out.println("nao passou aaaaaa");
         Node node = (Node)FXMLLoader.load(getClass().getResource("/view/consultarUsarios.fxml"));
-        System.out.println("passou");
         pnl_scroll.getChildren().add(node);
     }
     
@@ -93,10 +91,8 @@ public class HomeBibliController implements Initializable {
     @FXML
     void realizarEmprestimo(ActionEvent event) throws IOException {
         pnl_scroll.getChildren().clear();
-        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/emprestimoLivroBibli.fxml"));
         AnchorPane root1 = (AnchorPane) loader.load();
-
         pnl_scroll.getChildren().add(root1);
     }
     
@@ -108,6 +104,15 @@ public class HomeBibliController implements Initializable {
         AnchorPane root1 = (AnchorPane) loader.load();
         pnl_scroll.getChildren().add(root1);
     }
+    
+    @FXML
+    void consultarEmpres(ActionEvent event) throws IOException{
+        pnl_scroll.getChildren().clear();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/consultarEmpres.fxml"));
+        AnchorPane root1 = (AnchorPane) loader.load();
+        pnl_scroll.getChildren().add(root1);
+    }
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

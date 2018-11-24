@@ -64,16 +64,15 @@ public class LivroDAO {
         return resultado;
     }
 
-    public static String getLivros(String nome, String autor, String ano, String editora) throws SQLException{
-        String sqlQuery = "select titulo, newtable.nome as Autor, `descricao-categoria` as Categoria, newtable.editora as Editora, newtable.`ano-de-lancamento` as Ano_Publicado "
-                + "from tb_categoria natural join (select * from tb_livro natural join tb_autor)newtable" +
-                          " where titulo=? or newtable.nome=? or `ano-de-lancamento`= ? or editora=?";
+    public static String getLivros(String nome, String autor, String ano, String editora, String cat) throws SQLException{
+        String sqlQuery = "select * from vw_livro where titulo=? or autor=? or Ano_Publicado=? or Editora=? or Categoria=?";
         PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sqlQuery);
         
         psmt.setString(1, nome);
         psmt.setString(2, autor);
         psmt.setString(3, ano);
         psmt.setString(4, editora);
+        psmt.setString(5, cat);
         
         ResultSet rs = null;
         
@@ -91,7 +90,7 @@ public class LivroDAO {
         }
         
         psmt.close();
-        
+       
         return null;
     }
     
@@ -181,14 +180,19 @@ public class LivroDAO {
     }
     
     public static String consultarReservas(String nome, String livro) throws SQLException{
+        PreparedStatement psmt;
         
-        String isbn = getIsbn(livro);
-        
-        String sql = "SELECT `data-reserva`, isbn, nome FROM tb_reserva natural join tb_pessoa WHERE nome=? or isbn=?";
-        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql);
-        
-        psmt.setString(1, nome);
-        psmt.setString(2, isbn);
+        if(nome.equals("") && livro.equals("")){
+            String sql = "select `data-reserva`, isbn, nome from vw_reserva";
+            psmt = ModuloConexao.conector().prepareStatement(sql);
+        }else{
+            String isbn = getIsbn(livro);
+            String sql = "SELECT `data-reserva`, isbn, nome FROM vw_reserva";
+            psmt = ModuloConexao.conector().prepareStatement(sql);
+
+            psmt.setString(1, nome);
+            psmt.setString(2, isbn);
+        }
         
         ResultSet rs = psmt.executeQuery();
         

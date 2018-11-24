@@ -112,5 +112,26 @@ public class emprestimoDAO {
         }
         return 0;
     }
-    
+    public static String getEmpres(String nome, String titulo) throws SQLException{
+        String isbn = LivroDAO.getIsbn(titulo);
+        int cod = userSysDAO.getCodPessoa(nome);
+        
+        String sql;
+        PreparedStatement psmt;
+        
+        if(nome.equals("") && titulo.equals("")){
+            sql = "select isbn, titulo, `data-devolucao`, `data-emprestimo`, `status-devolucao`, nome, `tipo-acesso` from tb_emprestimo natural join tb_livro natural join tb_pessoa natural join tb_usuario";
+            psmt = ModuloConexao.conector().prepareStatement(sql);
+        }else{
+            sql = "select isbn, titulo, `data-devolucao`, `data-emprestimo`, `status-devolucao`, nome, `tipo-acesso`  from tb_emprestimo natural join tb_livro natural join tb_pessoa natural join tb_usuario where `cod-pessoa`=? or isbn=?";
+            psmt=ModuloConexao.conector().prepareStatement(sql);
+            
+            psmt.setInt(1, cod);
+            psmt.setString(2, isbn);
+        }
+        
+        ResultSet rs = psmt.executeQuery();
+        
+        return LivroDAO.printResultSet(rs);
+    }
 }

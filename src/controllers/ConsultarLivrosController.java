@@ -10,8 +10,6 @@ import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,12 +35,15 @@ public class ConsultarLivrosController implements Initializable {
 
     @FXML
     private JFXTextArea ta_output;
+    
+    @FXML
+    private JFXTextField tf_categoria;
 
     @FXML
     void BtnProcurar(ActionEvent event) {
         ta_output.setText("");
         try {
-            ta_output.setText(dao.LivroDAO.getLivros(tf_nome.getText(), tf_autor.getText(), tf_ano.getText(), tf_editora.getText()));
+            ta_output.setText(dao.LivroDAO.getLivros(tf_nome.getText(), tf_autor.getText(), tf_ano.getText(), tf_editora.getText(), tf_categoria.getText()));
         } catch (SQLException ex) {
             //usar Alerts aqui
             System.out.println("falha na consulta");
@@ -56,6 +57,7 @@ public class ConsultarLivrosController implements Initializable {
         tf_autor.setText("");
         tf_editora.setText("");
         tf_ano.setText("");
+        tf_categoria.setText("");
     }    
     
 }
