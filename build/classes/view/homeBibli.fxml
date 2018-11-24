@@ -87,7 +87,7 @@
                         <Insets left="40.0" />
                      </padding>
                   </Label>
-                  <JFXButton fx:id="empresRealizar" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#realizarEmprestimo" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Realizar" textFill="#5b5858">
+                  <JFXButton fx:id="empresAlterar" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#consultarEmpres" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Consultar" textFill="#5b5858">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -95,7 +95,7 @@
                         <Insets left="50.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="empresAlterar" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Alterar" textFill="#5b5858">
+                  <JFXButton fx:id="empresRealizar" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#realizarEmprestimo" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Realizar" textFill="#5b5858">
                      <font>
                         <Font size="13.0" />
                      </font>

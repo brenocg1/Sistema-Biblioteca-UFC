@@ -5,7 +5,9 @@
         <group>
             <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/HomeBibliController.java</file>
             <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/emprestimoDAO.java</file>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/EmprestimoDarBaixaController.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/ConsultarEmpresController.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/ConsultarReservasController.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/LivroDAO.java</file>
         </group>
     </open-files>
 </project-private>

@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="743.0" prefWidth="798.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controllers.ConsultarLivrosController">
+<AnchorPane id="AnchorPane" prefHeight="743.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ConsultarLivrosController">
    <children>
       <AnchorPane prefHeight="145.0" prefWidth="798.0" style="-fx-background-color: #4286f4;">
          <children>
@@ -25,5 +24,6 @@
       <JFXTextField fx:id="tf_ano" layoutX="570.0" layoutY="187.0" promptText="Ano" />
       <JFXButton layoutX="61.0" layoutY="281.0" onAction="#BtnProcurar" style="-fx-background-color: #4286f4;" text="Procurar" textFill="WHITE" />
       <JFXTextArea fx:id="ta_output" editable="false" layoutX="86.0" layoutY="323.0" prefHeight="353.0" prefWidth="533.0" />
+      <JFXTextField fx:id="tf_categoria" layoutX="197.0" layoutY="268.0" promptText="Categoria" />
    </children>
 </AnchorPane>
