@@ -1,0 +1,2 @@
+CREATE VIEW `vw_professor` AS select `tb_pessoa`.`nome` AS `nome`,`tb_curso`.`nome-curso` AS `nome-curso` from (((`tb_pessoa` join `tb_funcionario` on((`tb_pessoa`.`cod-pessoa` = `tb_funcionario`.`cod-pessoa`))) join `tb_professor` on((`tb_funcionario`.`cod-funcionario` = `tb_professor`.`cod-funcionario`))) join `tb_curso` on((`tb_professor`.`cod-curso` = `tb_curso`.`cod-curso`))) order by `tb_pessoa`.`nome`;
+
