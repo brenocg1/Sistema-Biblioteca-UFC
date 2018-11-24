@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/modelos/Aluno.java</file>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/LoginAppController.java</file>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/AlunoDAO.java</file>
-            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/CadastroUserController.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/HomeBibliController.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/dao/emprestimoDAO.java</file>
+            <file>file:/home/brenocg/NetBeansProjects/Biblioteca/src/controllers/EmprestimoDarBaixaController.java</file>
         </group>
     </open-files>
 </project-private>
