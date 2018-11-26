@@ -1,5 +1,23 @@
 # Sistema Biblioteca UFC
 ---
+
+## Pré-requisitos
+* [NetBeans](https://netbeans.org/downloads/)
+> ou sua IDE de preferência, mas mostraremos com essa.
+* [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+> contendo o compilador Java e suas API's.
+* [MySQL 5.7](https://dev.mysql.com/downloads/windows/installer/5.7.html)
+> installer do MySQL.
+* [JDBC Driver MySql](https://dev.mysql.com/downloads/connector/j/)
+> driver para conexão da aplicação com o banco.
+* [JFoenix](https://github.com/jfoenixadmin/JFoenix) 
+> usado em alguns componentes do fxml
+
+* JavaFx
+
+##### Observações
+> a modelagem nao esta igual ao script de povoamento, use o script para criar o banco.
+
 ## Começando
 As instruções abaixo, apesar de ainda em construção, vai guiá-lo para preparar todo o ambiente e rodar na sua máquina a aplicação, independente do sistema operacional que estiver usando.
 
@@ -13,8 +31,7 @@ As instruções abaixo, apesar de ainda em construção, vai guiá-lo para prepa
 /dist -> lib
 7. Pronto! Execute o projeto.
 
-
-##### Observacoes
+##### Observações
 > a modelagem nao esta igual ao script de povoamento, use o script para criar o banco.
 
 ## Pré-requisitos
