@@ -35,6 +35,5 @@ As instruções abaixo, apesar de ainda em construção, vai guiá-lo para prepa
 
 ## Autores
 * **Breno Campos**
-* **Gabriel Mapurunga**
 
 <!-- talvez tenha que adicionar o FontAwesoneFX -->
