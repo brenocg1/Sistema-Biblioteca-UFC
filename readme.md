@@ -1,7 +1,7 @@
 # Sistema Biblioteca UFC
 ---
 ##### Observações
-:pushpin: a modelagem nao esta igual ao script de povoamento, use o script para criar o banco.
+:pushpin: a modelagem nao esta igual ao script de povoamento, use o script para criar o banco.  
 :pushpin: Admin connection in progress
 
 ## Começando
