@@ -33,8 +33,31 @@ As instruções abaixo, apesar de ainda em construção, vai guiá-lo para prepa
 
 * JavaFx
 
+## Screens
+
+### Tela de login do banco.
+###### Use as credenciais do seu banco MySql
+![](loginBD.png)
+
+### Tela de login da aplicação
+###### Lembre-se de escolher o tipo de acesso correto
+###### aluno, professor, funcionario ou bibliotecário.
+###### administrador é com login e senha (admin, root)
+![](loginSys.png)  
+
+
+### Tela de administrador.
+###### Falta adicionar algumas telas dos botões
+![](admin.png)
+
+### Tela de Usuario
+###### Semelhante para todos os usuários, as alterações se dão em alguns privilégios para cada usuário.
+![](user.png)
+![](professor.png)
+![](funcionario.png)
+
 ## Autores
 * **Breno Campos**
-* **Gabriel Mapurunga**
+
 
 <!-- talvez tenha que adicionar o FontAwesoneFX -->
