@@ -8,9 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Biblioteca.jar" size="148746" download="eager" />
+    <jar href="Biblioteca.jar" size="154485" download="eager" />
     <jar href="lib/fontawesomefx-8.8.jar" size="443326" download="eager" />
+    <jar href="lib/hamcrest-core-1.3.jar" size="45280" download="eager" />
     <jar href="lib/jfoenix-8.0.7.jar" size="2631271" download="eager" />
+    <jar href="lib/junit-4.12.jar" size="316791" download="eager" />
     <jar href="lib/mysql-connector-java.jar" size="1002812" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Biblioteca" >

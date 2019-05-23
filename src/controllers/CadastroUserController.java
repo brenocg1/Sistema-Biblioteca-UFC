@@ -7,6 +7,7 @@ package controllers;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.sql.SQLException;
@@ -53,6 +54,12 @@ public class CadastroUserController implements Initializable {
     
     @FXML
     private JFXComboBox<String> cb_curso;
+    
+    @FXML
+    private JFXTextField tf_login;
+
+    @FXML
+    private JFXPasswordField tfp_password;
 
 
     @FXML
@@ -88,12 +95,12 @@ public class CadastroUserController implements Initializable {
         telefones.add(new telefone(tx_telf.getText()));
         
         Aluno aluno = new Aluno(telefones, tx_nome.getText(), tx_matr.getText(), tx_endr.getText(), parsed, cb_curso.getSelectionModel().getSelectedItem());
-        System.out.println(cb_curso.getSelectionModel().getSelectedItem());
+        
         try {
-            dao.AlunoDAO.cadastrarAluno(aluno);
-        } catch (SQLException ex) {
+            if(dao.AlunoDAO.cadastrarAluno(aluno, tf_login.getText(), tfp_password.getText()) == -1) return;
+        } catch (SQLException ex){
             System.out.println("exception na dao");
-            ex.printStackTrace();
+            return;
         }
         
         biblioteca.Alertas.Informacao("Cadastrado Realizado!", "Novo aluno cadastrado com successo!");

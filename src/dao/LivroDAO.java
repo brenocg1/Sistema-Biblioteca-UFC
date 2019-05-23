@@ -66,18 +66,28 @@ public class LivroDAO {
     }
 
     public static String getLivros(String nome, String autor, String ano, String editora, String cat) throws SQLException{
-        //String sqlQuery = "select * from tb_livro where titulo=? or (select)=? or Ano_Publicado=? or Editora=? or Categoria=?";
         
-        String sqlQuery = "select * from vw_livro where titulo=? or autor=? or Ano_Publicado=? or Editora=? or Categoria=?";
-        
-        
-        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sqlQuery);
-        
-        psmt.setString(1, nome);
-        psmt.setString(2, autor);
-        psmt.setString(3, ano);
-        psmt.setString(4, editora);
-        psmt.setString(5, cat);
+        PreparedStatement psmt = null;
+        if(nome.equals("") &&
+           autor.equals("") &&
+           ano.equals("") &&
+           editora.equals("") &&
+           cat.equals(""))
+        {
+            String sql = "select * from vw_livro";
+            psmt = ModuloConexao.conector().prepareStatement(sql);
+            
+        }
+        else{
+            String sqlQuery = "select * from vw_livro where titulo=? or autor=? or Ano_Publicado=? or Editora=? or Categoria=?";        
+            psmt = ModuloConexao.conector().prepareStatement(sqlQuery);
+
+            psmt.setString(1, nome);
+            psmt.setString(2, autor);
+            psmt.setString(3, ano);
+            psmt.setString(4, editora);
+            psmt.setString(5, cat);
+        }
         
         ResultSet rs = null;
         
@@ -240,10 +250,7 @@ public class LivroDAO {
     public static void cadastrarLivro(String isbn, String nome, String ano, String editora, String quantidade, String categoria, String nomeAutor) throws SQLException{
         
         String sql = "insert into tb_livro (isbn, titulo, `ano-de-lancamento`, editora, `qtd-copias`, `cod-categoria`)" +
-                     "values (?,?,?,?,?,(select `cod-categoria` from `tb_categoria` where `descricao-categoria` =?));"+
-                
-                     "insert into tb_livro_autor(isbn, `cod-autor`)" +
-                     "values(?, (select `cod-autor` from tb_autor where nome =?))";
+                     "values (?,?,?,?,?,(select `cod-categoria` from tb_categoria where `descricao-categoria`=?))";
         try{
             PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql);
             
@@ -252,11 +259,7 @@ public class LivroDAO {
             psmt.setInt(3, Integer.parseInt(ano));
             psmt.setString(4, editora);
             psmt.setInt(5, Integer.parseInt(quantidade));
-            psmt.setString(6, categoria);
-            
-            psmt.setString(7, isbn);
-            psmt.setString(8, nomeAutor);
-            
+            psmt.setString(6, categoria);            
             psmt.execute();
             psmt.close();
        
@@ -265,6 +268,15 @@ public class LivroDAO {
             System.out.println("Falha no cadastro");
             System.out.println(e);
         }
+        
+        String sql2 = "insert into tb_livro_autor(isbn, `cod-autor`) values(?, (select `cod-autor` from tb_autor where nome=?))";
+
+        PreparedStatement psmt = ModuloConexao.conector().prepareStatement(sql2);
+        
+        psmt.setString(1, isbn);
+        psmt.setString(2, nomeAutor);
+        psmt.execute();
+        psmt.close();
     }
     
     public static void removerLivro(String isbn){

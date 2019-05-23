@@ -70,28 +70,9 @@ public class InserirLivrosController implements Initializable {
         }catch(SQLException e){
             System.out.println("Falha na inserção");
             System.out.println(e);
+            return;
         }
-        
-        try {
-            tf_nome.setText("");
-            tf_editora.setText("");
-            tf_ano.setText("");
-            tf_isbn.setText("");
-            tf_quantidade.setText("");
-            
-            for(String cat : dao.LivroDAO.getCategorias()){
-                if(cat == null) break;
-                cb_categoria.getItems().add(cat);
-            }
-            for(String aut : dao.LivroDAO.getAutores()){
-                if(aut == null) break;
-                cb_autor.getItems().add(aut);
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(InserirLivrosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        biblioteca.Alertas.Informacao("Livro Cadastrado", "Sucesso no cadastro");
     }
     
     @Override

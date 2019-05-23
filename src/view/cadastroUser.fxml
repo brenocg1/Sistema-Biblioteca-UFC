@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -56,5 +57,17 @@
          </font>
       </Label>
       <JFXComboBox fx:id="cb_curso" focusColor="#0040ff" layoutX="692.0" layoutY="217.0" prefHeight="26.0" prefWidth="260.0" unFocusColor="RED" />
+      <Label layoutX="692.0" layoutY="293.0" text="login">
+         <font>
+            <Font name="Lato Light" size="25.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tf_login" layoutX="805.0" layoutY="296.0" />
+      <Label layoutX="692.0" layoutY="341.0" text="senha">
+         <font>
+            <Font name="Lato Light" size="25.0" />
+         </font>
+      </Label>
+      <JFXPasswordField fx:id="tfp_password" layoutX="805.0" layoutY="344.0" prefHeight="26.0" prefWidth="155.0" />
    </children>
 </AnchorPane>

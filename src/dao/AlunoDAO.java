@@ -19,8 +19,8 @@ import modelos.Aluno;
  */
 public class AlunoDAO {
     
-    public static void cadastrarAluno(Aluno aluno) throws SQLException{
-        String sql = "CALL pr_cadastra_aluno(?, ?, ?, ?, ?)";
+    public static int cadastrarAluno(Aluno aluno, String login, String senha) throws SQLException{
+        String sql = "CALL pr_cadastra_aluno(?, ?, ?, ?, ?, ?, ?)";
         
         CallableStatement callableStatement = ModuloConexao.conector().prepareCall(sql);
         
@@ -30,13 +30,17 @@ public class AlunoDAO {
         callableStatement.setInt(4, Integer.parseInt(aluno.getMatricula()));
         callableStatement.setDate(5, new Date(aluno.getDataIngresso().getTime()));
         
+        callableStatement.setString(6, login);
+        callableStatement.setString(7, senha);
+        
         //apagar os registros q eu fiz de teste aqui
         
         try{
             callableStatement.execute();
         }catch(SQLException ex){
+            biblioteca.Alertas.Erro("Data de conclusao ultrapassada", "falha no cadastro");
             System.out.println("falha no cadastro aluno");
-            return;
+            return -1;
         }
         
         callableStatement.close();
@@ -52,6 +56,8 @@ public class AlunoDAO {
             
             psmt2.close();
         }
+        
+        return 1;
     }
     
     

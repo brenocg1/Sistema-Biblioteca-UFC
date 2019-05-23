@@ -88,7 +88,7 @@
                               <Insets top="60.0" />
                            </VBox.margin>
                         </Label>
-                        <JFXButton fx:id="livros1" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Livros" textFill="#5b5858">
+                        <JFXButton fx:id="livros1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#inserirLivro" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Livros" textFill="#5b5858">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>

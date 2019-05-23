@@ -108,6 +108,15 @@ public class HomeAdminController implements Initializable {
         
         loginAppStage.show();
     }
+    
+    
+    @FXML
+    void inserirLivro(ActionEvent event) throws IOException {
+        pnl_scroll.getChildren().clear();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/inserirLivros.fxml"));
+        AnchorPane root1 = (AnchorPane) loader.load();
+        pnl_scroll.getChildren().add(root1);
+    }
 
     
     @Override
